@@ -11,14 +11,17 @@ export default function Products() {
   
   return (
     <div className='flex container mx-auto'>
-        <div className='w-8/12'>
+        <div className='w-9/12 grid grid-cols-3 gap-4 m-4'>
            {
-            products.map(product => <Product product={product}/>)
+            products.map(product => <Product key={product.id} product={product}/>)
            }
             
         </div>
         {/* Order Summary */}
-        <aside className='bg-amber-300 w-4/12'>Aside</aside>
+        <aside className='bg-amber-300 w-3/12'>Aside
+       
+        </aside>
+
     </div>
   )
 }
