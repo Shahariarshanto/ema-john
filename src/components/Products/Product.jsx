@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function Product({ product }) {
-//   console.log(product);
+export default function Product({ product , handleAddToCart}) {
+  
 
   const { name, price, seller, img } = product;
   return (
@@ -21,11 +21,11 @@ export default function Product({ product }) {
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
         Manufacturer : {seller}
         </p>
-        <a
-          href="#"
+        <button
+          onClick={()=> handleAddToCart(product)}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          Read more
+          Add to Cart
           <svg
             aria-hidden="true"
             className="w-4 h-4 ml-2 -mr-1"
@@ -39,7 +39,7 @@ export default function Product({ product }) {
              
             ></path>
           </svg>
-        </a>
+        </button>
       </div>
     </div>
   );
